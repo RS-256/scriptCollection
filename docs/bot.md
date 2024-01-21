@@ -14,17 +14,17 @@ An application that allows frequently used carpet bot and their operations to be
 this script is CLI based. All operations are therefore carried out via commands.
 
 ### command
-`/bot` : display version and credit
-`/bot config create <id> <mcid> <forcible> <command>` : create new script
-`/bot config delete <existing_id>` : delete script
-`/bot config info` show all available script
-`/bot config info <existing_id>`show detailed specific script
-`/bot config modify <existing_id> insert <index> <command>` : modify script with insert
-`/bot config modify <existing_id> append <command>` : modify script with append
-`/bot config modify <existing_id> prepend <command>` : modify script with prepend
-`/bot config modify <existing_id> remove index <index>` : remove index line of script
-`/bot config modify <existing_id> remove all`
-`/bot execute <existing_id>` : remove all command of script, not delete
+`/bot` : display version and credit<br>
+`/bot config create <id> <mcid> <forcible> <command>` : create new script<br>
+`/bot config delete <existing_id>` : delete script<br>
+`/bot config info` show all available script<br>
+`/bot config info <existing_id>`show detailed specific script<br>
+`/bot config modify <existing_id> insert <index> <command>` : modify script with insert<br>
+`/bot config modify <existing_id> append <command>` : modify script with append<br>
+`/bot config modify <existing_id> prepend <command>` : modify script with prepend<br>
+`/bot config modify <existing_id> remove index <index>` : remove index line of script<br>
+`/bot config modify <existing_id> remove all`<br>
+`/bot execute <existing_id>` : remove all command of script, not delete<br>
 `/bot query <fake_player>` : show where bot is
 
 ### file
