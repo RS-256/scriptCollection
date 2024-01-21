@@ -61,7 +61,7 @@ test() -> (
 
 createConfig(id, mcid, forcible, command) -> (
 	if (hasFile(global_defaultDirectory, id) == true, _error('there is already script with that id'));
-	if (forcible == true && player()~'permission_level' <= 2, _error(str('You cannot create forcible:true at your permission level : %s, available with level 2 and above', player()~'permission_level')));
+	if (forcible == true && player()~'permission_level' <= 2, _error(str('You cannot create forcible:true with your permission level : %s, available with level 2 or above', player()~'permission_level')));
 	write_file(str('bot/%s', id), 'text', mcid, forcible, command);
 	print(format('f » ', 'g Successfully created the ', str('#FFEE44 %s', id)));
 );
@@ -151,7 +151,7 @@ executeScript(existing_id) -> (
 	file = read_file(filename, 'text');
 	mcid = file:0;
 	forcible = file:1;
-	if (forcible == true && player()~'permission_level' <= 2, _error(str('You cannot execute forcible:true at your permission level : %s, available with level 2 and above', player()~'permission_level')));
+	if (forcible == true && player()~'permission_level' <= 2, _error(str('You cannot execute forcible:true with your permission level : %s, available with level 2 or above', player()~'permission_level')));
 	if(player(mcid) != null, errorText = format('w mcid: ', str('b %s ', mcid), 'w is already logged on'); _error(errorText));
 	if (forcible == true, 
 		print(format(str('#FFA500 forcible command is executed by %s', player())));
