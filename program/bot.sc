@@ -93,7 +93,7 @@ infoSpecificConfig(existing_id) -> (
 
 modifyConfigInsert(existing_id, index, command) -> (
 	if (hasFile(global_defaultDirectory, existing_id) == false, _error(str('%s doesn\'t exist', existing_id)));
-	filename = str(global_defaultDirectory, existing_id);
+	filename = global_defaultDirectory + existing_id;
 	file = read_file(filename, 'text');
 	put(file, index + 2, command, 'insert');
 	delete_file(filename, 'text');
@@ -103,7 +103,7 @@ modifyConfigInsert(existing_id, index, command) -> (
 
 modifyConfigAppend(existing_id, command) -> (
 	if (hasFile(global_defaultDirectory, existing_id) == false, _error(str('%s doesn\'t exist', existing_id)));
-	filename = str(global_defaultDirectory, existing_id);
+	filename = global_defaultDirectory + existing_id;
 	file = read_file(filename, 'text');
 	put(file, null, command, 'extend');
 	delete_file(filename, 'text');
@@ -113,7 +113,7 @@ modifyConfigAppend(existing_id, command) -> (
 
 modifyConfigPrepend(existing_id, command) -> (
 	if (hasFile(global_defaultDirectory, existing_id) == false, _error(str('%s doesn\'t exist', existing_id)));
-	filename = str(global_defaultDirectory, existing_id);
+	filename = global_defaultDirectory + existing_id;
 	file = read_file(filename, 'text');
 	put(file, 2, command, 'extend');
 	delete_file(filename, 'text');
@@ -123,7 +123,7 @@ modifyConfigPrepend(existing_id, command) -> (
 
 modifyConfigRemoveByIndex(existing_id, index) -> (
 	if (hasFile(global_defaultDirectory, existing_id) == false, _error(str('%s doesn\'t exist', existing_id)));
-	filename = str(global_defaultDirectory, existing_id);
+	filename = global_defaultDirectory + existing_id;
 	file = read_file(filename, 'text');
 	delete(file:(index+1));
 	delete_file(filename, 'text');
@@ -133,7 +133,7 @@ modifyConfigRemoveByIndex(existing_id, index) -> (
 
 modifyConfigRemoveAll(existing_id) -> (
 	if (hasFile(global_defaultDirectory, existing_id) == false, _error(str('%s doesn\'t exist', existing_id)));
-	filename = str(global_defaultDirectory, existing_id);
+	filename = global_defaultDirectory + existing_id;
 	file = read_file(filename, 'text');
 	c_for(i = 2, has(file:2) == true, i = i + 1,
 		delete(file, 2);
