@@ -1,9 +1,9 @@
 // bot manager by RS256
 
 global_app_name = system_info('app_name');
-global_scriptVersion = '0.0.0';
+global_scriptVersion = '1.0.0';
 global_author = 'RS256';
-global_defaultDirectory = 'bot/';
+global_defaultDirectory = global_app_name + '/';
 
 _error(error) -> exit(print(format(str('r %s', error))));
 
